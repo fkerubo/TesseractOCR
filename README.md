@@ -50,4 +50,36 @@ IntelliJ IDEA (or any Java IDE)
 
 Postman (for API testing)
 
-Tesseract OCR Engine                                                                                                                                                                             
+Tesseract OCR Engine                                                                                                                                                                                                                                                                                                                                                  ⚙️ Installation & Setup
+1️⃣ Install Java JDK 17
+
+Download and install JDK 17 (Eclipse Temurin recommended).
+
+Verify:
+
+java -version
+
+2️⃣ Install Apache Maven
+
+Verify Maven installation:
+
+mvn -v
+
+3️⃣ Install Tesseract OCR (Required)
+
+Download from:
+
+https://github.com/UB-Mannheim/tesseract/wiki
+
+Install to:
+
+C:\Program Files\Tesseract-OCR
+
+
+Ensure this folder exists:
+
+C:\Program Files\Tesseract-OCR\tessdata
+
+4️⃣ Clone the Project
+git clone <YOUR_GITHUB_REPO_LINK>
+cd ocr-demo                                                                                                                                                                             
