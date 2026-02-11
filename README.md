@@ -82,4 +82,19 @@ C:\Program Files\Tesseract-OCR\tessdata
 
 4️⃣ Clone the Project
 git clone <YOUR_GITHUB_REPO_LINK>
-cd ocr-demo                                                                                                                                                                             
+cd ocr-demo                                                                                                                                                                                                                                                                                                                                                        
+5️⃣ Configure the OCR Service
+
+In OCRService.java, ensure the datapath is correct:
+
+tesseract.setDatapath("C:/Program Files/Tesseract-OCR/tessdata");
+tesseract.setLanguage("eng");
+
+6️⃣ Run the Application
+mvn spring-boot:run
+
+
+Expected output:
+
+Tomcat started on port(s): 8080
+Started OcrDemoApplication                                                                                                                                                                          
