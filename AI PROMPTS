@@ -1,0 +1,82 @@
+Prompt 1: Adding Tess4J Dependency
+
+Prompt:
+
+Why am I getting “Cannot resolve symbol Tesseract” in my Spring Boot project?
+
+AI Response Summary:
+The AI explained that the error occurs when the Tess4J dependency is missing from pom.xml. It provided the correct Maven dependency:
+
+<dependency>
+    <groupId>net.sourceforge.tess4j</groupId>
+    <artifactId>tess4j</artifactId>
+    <version>5.11.0</version>
+</dependency>
+
+
+It also advised reloading the Maven project after adding the dependency.
+
+Evaluation:
+This response directly solved the issue. The explanation was technically correct and helped me understand the importance of dependency management in Maven projects.
+
+Prompt 2: Fixing 404 Error in Spring Boot
+
+Prompt:
+
+I am getting a 404 error when testing /ocr/scan in Postman. Why?
+
+AI Response Summary:
+The AI explained that a 404 error may occur due to:
+
+Incorrect URL path
+
+Using GET instead of POST
+
+Missing @RestController annotation
+
+Controller not inside the base package
+
+Application not restarted
+
+It also clarified that browsers send GET requests by default, while the endpoint was defined using @PostMapping.
+
+Evaluation:
+This explanation helped distinguish between HTTP method issues and mapping errors. It reinforced understanding of how Spring Boot routing works.
+
+Prompt 3: Testing File Upload in Postman
+
+Prompt:
+
+How do I upload an image file in Postman to test my OCR API?
+
+AI Response Summary:
+The AI provided step-by-step instructions:
+
+Select POST method
+
+Go to Body → form-data
+
+Add key file
+
+Change type from Text to File
+
+Select image file (JPG/PNG)
+
+It emphasized that the key name must match @RequestParam("file").
+
+Evaluation:
+This was extremely helpful because file upload configuration in Postman can be confusing. The instructions were accurate and resolved the issue immediately.
+
+Prompt 4: Choosing Between PDF and Image Input
+
+Prompt:
+
+Should I upload an image or a PDF file for OCR testing?
+
+AI Response Summary:
+The AI explained that Tesseract works natively with images (JPG, PNG, TIFF).
+PDFs require additional processing (PDF to image conversion) before OCR can be applied.
+It recommended using images for the minimal working version.
+
+Evaluation:
+The explanation clarified scope boundaries and prevented unnecessary complexity. It also helped define the supported file types in the README documentation.
