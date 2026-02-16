@@ -34,27 +34,31 @@ public class OCRController {
                 ext = originalName.substring(originalName.lastIndexOf("."));
             }
 
+            // Create temp file and save uploaded file
             tempFile = File.createTempFile("id-", ext);
             file.transferTo(tempFile);
 
+            // Run OCR
             String text = ocrService.extractText(tempFile);
 
             return ResponseEntity.ok(text);
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ioEx) {
+            ioEx.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("File handling error: " + e.getMessage());
-        } catch (Exception e) {
-            e.printStackTrace();
+                    .body("File handling error: " + ioEx.getMessage());
+        } catch (Exception ex) {
+            ex.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("OCR processing error: " + e.getMessage());
+                    .body("OCR processing error: " + ex.getMessage());
         } finally {
+            // Clean up temp file
             if (tempFile != null && tempFile.exists()) {
                 tempFile.delete();
             }
         }
     }
+
 
     @GetMapping("/test")
     public String test() {
